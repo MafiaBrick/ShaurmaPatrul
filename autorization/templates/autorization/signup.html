@@ -1,0 +1,38 @@
+{% extends 'autorization/base.html' %}
+{% block content %}
+<div class="row justify-content-center mt-5">
+  <div class="col-md-5">
+    <h2>Авторизация</h2>
+  </div>
+</div>
+<div class="row justify-content-center mt-5">
+  <div class="col-md-5">
+    {% if error %}
+      <div class="alert alert-warning" role="alert">
+        {{error}}
+      </div>
+    {% endif %}
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label class = 'form-label' for="username">Логин</label>
+        <input class = 'form-control' type="text" name="username" id = 'id_username'>
+      </div>
+      <div class="form-group">
+        <label class = 'form-label' for="password1">Пароль</label>
+        <input class = 'form-control' type="password" name="password1" id = 'id_password1'>
+      </div>
+      <div class="form-group">
+        <label class = 'form-label' for="password2">Подтвердите пароль</label>
+        <input class = 'form-control' type="password" name="password2" id = 'id_password2'>
+      </div>
+      <br>
+      <button type="submit" class = 'btn btn-warning' name="button">Зарегестрироваться</button>
+    </form>
+    <br>
+    <div class="text-center">
+      Если у вас уже создан аккаунт, <a href="{% url 'login' %}">войдите в него</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

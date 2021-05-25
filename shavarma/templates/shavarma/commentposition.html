@@ -1,0 +1,67 @@
+{% extends 'autorization/base.html' %}
+{% block content %}
+<div class="row justify-content-center mt-5">
+  <div class="col-md-5">
+    <img class ="img-fluid mb-2" src="{{data.image.url}}" alt="">
+  </div>
+	<div class="col-md-5">
+		<h2>{{data.title}}</h2>
+		<p>{{pos.title}}</p>
+    <form method="post">
+{% csrf_token %}
+
+		<div class="row">
+			<div class="col">
+				Вкус
+			</div>
+			<div class="col">
+        <select class="form-select" name="tasty">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				Структура
+			</div>
+			<div class="col">
+        <select class="form-select" name="struct">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				Оригинальность
+			</div>
+			<div class="col">
+        <select class="form-select" name="orig">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+			</div>
+		</div>
+    <div class="row">
+      <textarea class = 'form-control' name="com" rows="8" cols="80"></textarea>
+    </div>
+    <div class="row">
+      <button type="submit" class = 'btn btn-warning' name="button">Сохранить</button>
+    </div>
+</form>
+	</div>
+
+</div>
+
+
+{% endblock %}
