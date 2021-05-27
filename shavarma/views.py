@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 def homepage(request):
     data = shavarmaModel.objects.all().order_by('rating')
-    return render(request, 'shavarma/homepage.html',{'data':data})
+    return render(request, 'shavarma/temphomepage.html',{'data':data})
 
 #Раскрывает пункты меню точки
 def detailShavarma(request, id_point):
@@ -17,7 +17,7 @@ def detailShavarma(request, id_point):
 #Функция выводит подробную статистику о конкретной позиции
 def detailposition(request,id_point,id_pos):
     position = get_object_or_404(positionOfPoint, id = id_pos)
-    comm = comment.objects.filter(point__id = id_pos)
+    comm = comment.objects.filter(point__id = id_pos).order_by('-date')
     object = get_object_or_404(shavarmaModel, id = id_point)
     #Считает рейтинг качеств
     if len(comm) != 0:

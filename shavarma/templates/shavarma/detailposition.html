@@ -39,13 +39,28 @@
   <div class="col-md-10">
     {% for el in com %}
       <div class="alert alert-warning" role="alert">
-        <div class="col">
+        <div class="row">
+
           <h3>{{el.user}}</h3>
+    </div>
+      <div class="row">
+        <div class="col">
+            {{el.com}}
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col">
+          Вкус: {{el.tasty}}
         </div>
         <div class="col">
-          {{el.com}}
+          Структура: {{el.struct}}
+        </div>
+        <div class="col">
+          Оригинальность: {{el.orig}}
         </div>
       </div>
+    </div>
     {% endfor %}
   </div>
 </div>
