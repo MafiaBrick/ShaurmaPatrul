@@ -20,6 +20,25 @@
 }
 .hellotext p{
    color:white;
+   position: relative;
+   top: -20%;
    font-size: 50px;
    margin: 0;
+}
+.hellotext h5{
+   color:white;
+   position: relative;
+   top: -20%;
+   font-size: 50px;
+   margin: 0;
+}
+.slid
+{
+  top: -50%;
+  position: relative;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
 }

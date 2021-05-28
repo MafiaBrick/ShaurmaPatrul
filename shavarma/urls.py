@@ -6,6 +6,7 @@ extra_urlpatterns = [
 ]
 urlpatterns = [
     path('',views.homepage, name = 'home'),
+    path('allpoint/',views.alllist, name = 'alllist'),
     path('<int:id_point>/',views.detailShavarma, name = 'detailPoint'),
 
     path('<int:id_point>/<int:id_pos>/',include(extra_urlpatterns)),

@@ -25,6 +25,9 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="{% url 'home' %}">Главная страница</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'alllist' %}">Список мест</a>
+        </li>
         <li class="nav-item dropdown d-flex">
           <a class="nav-link dropdown-toggle dropauth"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {% if user.is_authenticated %}
@@ -59,9 +62,7 @@
 {% block back %}
 {% endblock %}
     <div class="container justify-content-center">
-      {% if user.is_authenticated %}
 
-      {% endif %}
     {% block content %}{% endblock %}
     </div>
 

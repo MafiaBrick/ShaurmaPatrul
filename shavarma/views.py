@@ -5,13 +5,15 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def homepage(request):
-    data = shavarmaModel.objects.all().order_by('rating')
+    data = shavarmaModel.objects.all().order_by('-rating')[:3]
     return render(request, 'shavarma/temphomepage.html',{'data':data})
-
+def alllist(request):
+    data = shavarmaModel.objects.all().order_by('-rating')
+    return render(request, 'shavarma/homepage.html',{'data':data})
 #Раскрывает пункты меню точки
 def detailShavarma(request, id_point):
     object = get_object_or_404(shavarmaModel, id = id_point)
-    position = positionOfPoint.objects.filter(id_point__id = id_point).order_by('rating')
+    position = positionOfPoint.objects.filter(id_point__id = id_point).order_by('-rating')
     return render(request,'shavarma/detailPoint.html',{'data':object,'pos':position,'point':id_point})
 
 #Функция выводит подробную статистику о конкретной позиции
