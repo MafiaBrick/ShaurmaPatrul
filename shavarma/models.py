@@ -19,6 +19,8 @@ class positionOfPoint(models.Model):
     id_point = models.ForeignKey('shavarmaModel', on_delete = models.CASCADE)
     title = models.CharField(max_length=200)
     rating = models.FloatField(default = 1)
+    cost = models.IntegerField()
+    weight = models.IntegerField(blank=True)
     def __str__(self):
         return self.title
     class Meta:

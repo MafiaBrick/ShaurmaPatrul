@@ -1,13 +1,24 @@
 {% extends 'autorization/base.html' %}
-
+{% block title %}
+Список мест
+{% endblock %}
 {% block content %}
 <br><br>
 <div class="row justify-content-center mt-5">
   {% for el in data %}
-    <div class="col-md-4">
+    <!-- <div class="col-md-4">
         <a href="{% url 'detailPoint' el.id %}"><img src="{{el.image.url}}" class="img-fluid mb-2"></a>
         <h4>{{el.title}}</h4>
+    </div> -->
+
+    <div class="card" style="width: 18rem;">
+      <a href="{% url 'detailPoint' el.id %}"><img src="{{el.image.url}}" class="img-fluid mb-2"></a>
+      <div class="card-body">
+        <h5 class="card-title">{{el.title}}</h5>
+        <p class="card-text">Рейтинг: {{el.rating|truncatechars:30}}</p>
+      </div>
     </div>
+
   {% endfor %}
 </div>
 {% endblock %}

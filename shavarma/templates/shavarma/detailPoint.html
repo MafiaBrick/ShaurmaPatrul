@@ -1,4 +1,8 @@
 {% extends 'autorization/base.html' %}
+{% block title %}
+{{data.title}}
+{% endblock %}
+
 {% block content %}
 <br><br>
 <div class="row justify-content-center mt-5">
@@ -12,11 +16,15 @@
 <div class="row justify-content-center mt-5">
   <div class="col-md-4">
     <img class ="img-fluid mb-2" src="{{data.image.url}}">
+    <p>{{data.memo}}</p>
   </div>
   <div class="col-md-4">
+
     {% if pos %}
       {% for p in pos %}
-      <a href="{{p.id}}/" class = 'form-control'>{{p.title}}</a>
+      <div class="row">
+        <a href="{{p.id}}/" class = 'form-control bigger'>{{p.title}}-{{p.cost}}руб.{% if p.weight %}({{p.weight}}гр.){% endif %}</a>
+      </div>
       {% endfor %}
     {% endif %}
   </div>

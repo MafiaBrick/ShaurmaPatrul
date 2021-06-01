@@ -42,3 +42,28 @@
   flex-direction: row;
   justify-content: center;
 }
+a{
+  text-decoration: none;
+}
+.card{
+  margin-bottom: 5%;
+  margin-right: 1rem;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+}
+.card:hover{
+  transform: scale(1.05);
+}
+.bigger{
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+}
+.bigger:hover{
+  font-size: 1.1rem;
+}
