@@ -8,6 +8,7 @@ class shavarmaModel(models.Model):
     memo = models.TextField(blank=True)
     image = models.ImageField(upload_to='shavarma/images')
     rating = models.FloatField(default = 1)
+    map = models.TextField(blank=True)
     def __str__(self):
         return self.title
     class Meta:

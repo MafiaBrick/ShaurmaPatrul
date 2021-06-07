@@ -67,3 +67,7 @@ a{
 .bigger:hover{
   font-size: 1.1rem;
 }
+.title_p{
+  display:flex;
+  justify-content: space-between;
+}
